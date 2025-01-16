@@ -20,6 +20,8 @@ Visual Studio (VS) Code is a programming development software developed by Micro
 
 Extensions are addons to the VS code software, these extensions could let you add specific languages, debuggers, tools such as live server (to locally host your HTMl project) or have pets in the corner.
 
+---
+
 ### Version Control, Git, & GitHub
 
 
