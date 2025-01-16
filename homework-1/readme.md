@@ -2,7 +2,7 @@
 ### Websites vs Web Applications
 <!-- Brief description of understanding. Use any combination of markdown techniques. Should be more than 2 sentences. -->
 Websites are typically used to display information or for business websites, or portfolios, some examples are:
-1. [Wikipedia - Raccoons](https://en.wikipedia.org/wiki/Raccoon)
+1. [Wikipedia - Raccoons](https://en.wikipedia.org/wiki/Raccoon){:target="_blank"}
 2. [Fandom - Hatsune Miku](https://vocaloid.fandom.com/wiki/Hatsune_Miku)
 3. [Portfolio - Yuta Abe](https://yuta-abe.com/)
 
