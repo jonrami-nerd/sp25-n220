@@ -10,7 +10,7 @@
 
 **3 ways to declare variables**
 
-` 
+`
 var
 `
 don't use since its typically used in js libraries and can mess up code, can be redeclared and reassigned
