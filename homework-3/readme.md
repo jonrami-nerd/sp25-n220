@@ -8,6 +8,8 @@
 
 ### Weekly Recap
 
+List of new materials learned to use as reference later
+
 **3 ways to declare variables**
 
 `
