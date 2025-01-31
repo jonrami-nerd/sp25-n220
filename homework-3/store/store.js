@@ -6,6 +6,6 @@ let discount = 0.10;
 let totalAfterTax = price * (1 + tax);
 let discountAfterTax = price * (1 + tax) * (1 - discount);
 
-console.log("Total price after tax: $", totalAfterTax);
+console.log("Total price after tax: $", totalAfterTax.toFixed(2));
 console.log("Qualifies for discount?", totalAfterTax >= 50);
-console.log("Discounted total after tax: $", discountAfterTax);
+console.log("Discounted total after tax: $", discountAfterTax.toFixed(2));
