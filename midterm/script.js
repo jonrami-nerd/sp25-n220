@@ -1,6 +1,7 @@
 const menuRef = document.querySelector("#menu");
 const cartRef = document.querySelector("#cart");
 const noItemsRef = document.querySelector("#no-items");
+const removeBtnRef = document.querySelector("#remove-item")
 
 const menuItems = [
   { name: "Hamburger", price: "$2.99" },
@@ -23,11 +24,17 @@ function addItemToCart(e) {
 
   showCart();
 }
+function removeItemFromCart() {
+  cart.pop();
 
+  showCart();
+}
 function showCart() {
   cartRef.innerHTML = "";
   for (let i = 0; i < cart.length; i++) {
     cartRef.innerHTML += "<tr>" + cart[i] + "</tr>";
+  
+    
   }
 
   noItemsRef.style.display = cart.length === 0 ? "block" : "none";
@@ -45,14 +52,8 @@ for (let i = 0; i < menuItems.length; i++) {
   
   newBtn.onclick = addItemToCart;
   newLi.appendChild(newBtn);
+  
 
   menuRef.appendChild(newLi);
 }
-
-//For loop to loop through cart list
-for (let i = 0; i < cartRef.length; i++) {
-  const newRow = document.createElement("tr")
-  newRow.innerText = cartRef[i]
-
-  
-}
+removeBtnRef.onclick = removeItemFromCart;
