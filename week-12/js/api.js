@@ -20,19 +20,30 @@ async function getDigimon() {
 
     digimonListRef.innerHTML = "";
 
-    for(let i = 0; i < digiData.length; i++) {
-        const currentDigimon = digiData[i];
+    for (let i = 0; i < digiData.length; i++) {
+      const currentDigimon = digiData[i];
+      const digimonIsLiked =
+        JSON.parse(localStorage.getItem(currentDigimon.name)) || false;
+        let likeClass = ""
 
-        const newCard = document.createElement("div");
-        newCard.classList.add("digimon-card");
-        newCard.innerHTML += `
+        if(digimonIsLiked){
+            likeClass = "like"
+        }
+
+      const newCard = document.createElement("div");
+      newCard.classList.add("digimon-card");
+      newCard.innerHTML += `
             <div class="digimon-card">
-            <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/909.png" alt="">
-            <h4>Fuecoco</h4>
+            <img src="${currentDigimon.img}" alt="">
+            <h4>${currentDigimon.name}</h4>
             <button class="like">&hearts;</button>
-            `
 
-            digimonListRef.appendChild(newCard);
+            `;
+
+      newCard.dataset.name = currentDigimon.name;
+      newCard.onclick = likeDigimon;
+
+      digimonListRef.appendChild(newCard);
     }
   } catch (err) {
     console.warn(err);
@@ -40,5 +51,24 @@ async function getDigimon() {
 
   console.log("end of function");
 }
+
+function likeDigimon(e) {
+  const digimonName = e.currentTarget.dataset.name;
+
+  console.log(digimonName);
+
+  const isDigimonLiked = JSON.parse(
+    localStorage.getItem(digimonName)
+  )
+  if (isDigimonLiked){
+    localStorage.removeItem(digimonName)
+  }
+  else{
+    localStorage.setItem(digimio)
+  }
+
+  localStorage.setItem(digimonName, JSON.stringify(true));
+}
+
 
 getDigimon();
